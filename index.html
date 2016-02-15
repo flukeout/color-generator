@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <link rel="stylesheet/less" href="style.less" type="text/css">
+    <link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,500,500italic,700' rel='stylesheet' type='text/css'>
+
+
+    <script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="hammer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="jquery.hammer.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="app.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      less = {
+        env: "development",
+        async: false,
+        fileAsync: false,
+        poll: 1000,
+        functions: {},
+        dumpLineNumbers: "comments",
+        relativeUrls: false,
+        rootpath: ":/a.com/"
+      };
+    </script>
+    <script src="less.js"></script>
+    <meta name="viewport" content="width=320, user-scalable=no">
+  </head>
+
+  <body>
+
+    <div class="control-panel">
+
+
+      <div class="modifier" type="darken">
+        <div class="chunk" type="hue">
+          <div class="type">H</div>
+          <div class="less"></div>
+          <div class="value">0</div>
+          <div class="more"></div>
+        </div>
+        <div class="chunk" type="saturation">
+          <div class="type">S</div>
+          <div class="less"></div>
+          <div class="value">0</div>
+          <div class="more"></div>
+        </div>
+        <div class="chunk" type="lightness">
+          <div class="type">L</div>
+          <div class="less"></div>
+          <div class="value">0</div>
+          <div class="more"></div>
+        </div>
+      </div>
+
+
+
+      <div class="modifier" type="lighten">
+        <div class="chunk" type="hue">
+          <div class="less"></div>
+          <div class="value">0</div>
+          <div class="more"></div>
+        </div>
+        <div class="chunk" type="saturation">
+          <div class="less"></div>
+          <div class="value">0</div>
+          <div class="more"></div>
+        </div>
+        <div class="chunk" type="lightness">
+          <div class="less"></div>
+          <div class="value">0</div>
+          <div class="more"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="samples">
+    </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,123 @@
+@import "variables.less";
+
+body, html {
+    font-family: "Fira Sans";
+    padding: 0;
+    margin: 0;
+}
+
+body {
+  padding: 20px;
+}
+
+.modifier {
+  text-align: center;
+  float: left;
+  margin: 0 24px;
+
+
+  * {
+    -webkit-user-select: none;
+  }
+
+  .chunk {
+    // background: #eee;
+    padding: 7px 10px;
+    position: relative;
+
+
+    * {
+      opacity: .4;
+    }
+  }
+
+  .type {
+    margin-right: 12px;
+    font-weight: bold;
+    width: 10px;
+    position: absolute;
+    left: -45px;
+  }
+
+  .value {
+    width: 40px;
+    text-align: center;
+  }
+
+  .less,.more {
+    cursor: pointer;
+    font-family: "FontAwesome";
+    opacity: .1;
+
+    &:hover {
+      opacity: .2;
+    }
+
+  }
+
+  .more:after {
+    content: "\f138";
+  }
+
+  .less:after {
+    content: "\f137";
+  }
+
+  .less, .value, .more, .type {
+    display: inline-block;
+  }
+}
+
+.control-panel {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  .swatch {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: pink;
+  }
+
+
+}
+
+.animation-example {
+    -webkit-animation-name: example;
+    -webkit-animation-duration:  .4s;
+    -webkit-animation-iteration-count: 3;
+    -webkit-animation-delay: .5s;
+}
+
+@-webkit-keyframes example {
+    0% {
+        -webkit-transform: scale(1.5);
+        opacity: .5;
+    }
+    50%{
+        -webkit-transform: scale(.7);
+        opacity: .5;
+    }
+    100% {
+        -webkit-transform: scale(.7);
+        opacity: 0;
+    }
+}
+
+
+.sample  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    border-radius: 50%;
+  }
+}
+
