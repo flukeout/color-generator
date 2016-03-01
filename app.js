@@ -34,6 +34,11 @@ var modifier = {
     "hue" : 0,
     "saturation" : 0,
     "lightness" : 15
+  },
+  "lightest" : {
+    "hue" : 0,
+    "saturation" : 0,
+    "lightness" : 25
   }
 }
 
@@ -42,8 +47,12 @@ $(document).ready(function(){
   $(".control-panel .swatch.primary").css("background",base);
 
   $(".modifier").on("click",".less,.more",function(){
+
     var direction = $(this).closest(".modifier").attr("type");
     var attribute = $(this).closest(".chunk").attr("type");
+
+    console.log(direction,attribute);
+
     if($(this).hasClass("more")){
       modifier[direction][attribute] = parseInt(modifier[direction][attribute])  + 1;
     } else {
@@ -51,7 +60,7 @@ $(document).ready(function(){
     }
 
     updateControl();
-  buildSamples();
+    buildSamples();
   });
 
   updateControl();
@@ -63,7 +72,7 @@ function buildSamples(){
   $(".samples .sample").remove();
 
   for(var i = 0; i < baseHexes.length; i++) {
-    var sample = $("<div class='sample'><div class='dark'></div><div class='base'></div><div class='light'></div></div>");
+    var sample = $("<div class='sample'><div class='dark'></div><div class='base'></div><div class='light'></div><div class='lightest'/></div>");
     sample.find(".base").css("background",baseHexes[i]);
 
     var thisBase = hexToHsl(baseHexes[i]);
@@ -80,9 +89,15 @@ function buildSamples(){
       "lightness" : thisBase["lightness"] + modifier["lighten"]["lightness"]
     }
 
+    var lightestHsl = {
+      "hue" : thisBase["hue"] + modifier["lightest"]["hue"],
+      "saturation" : thisBase["saturation"] + modifier["lightest"]["saturation"],
+      "lightness" : thisBase["lightness"] + modifier["lightest"]["lightness"]
+    }
 
     sample.find(".dark").css("background",hslToCSS(darkHsl));
     sample.find(".light").css("background",hslToCSS(lightHsl));
+    sample.find(".lightest").css("background",hslToCSS(lightestHsl));
 
     $(".samples").append(sample);
 
@@ -120,6 +135,14 @@ function updateControl() {
     "lightness" : baseHsl["lightness"] + modifier["lighten"]["lightness"]
   }
 
+  var lightestHsl = {
+    "hue" : baseHsl["hue"] + modifier["lightest"]["hue"],
+    "saturation" : baseHsl["saturation"] + modifier["lightest"]["saturation"],
+    "lightness" : baseHsl["lightness"] + modifier["lightest"]["lightness"]
+  }
+
+
+
   $(".modifier[type=darken] [type=hue] .value").text(modifier["darken"]["hue"]);
   $(".modifier[type=darken] [type=saturation] .value").text(modifier["darken"]["saturation"] + "%");
   $(".modifier[type=darken] [type=lightness] .value").text(modifier["darken"]["lightness"] + "%");
@@ -128,9 +151,13 @@ function updateControl() {
   $(".modifier[type=lighten] [type=saturation] .value").text(modifier["lighten"]["saturation"] + "%");
   $(".modifier[type=lighten] [type=lightness] .value").text(modifier["lighten"]["lightness"] + "%");
 
+  $(".modifier[type=lightest] [type=hue] .value").text(modifier["lightest"]["hue"]);
+  $(".modifier[type=lightest] [type=saturation] .value").text(modifier["lightest"]["saturation"] + "%");
+  $(".modifier[type=lightest] [type=lightness] .value").text(modifier["lightest"]["lightness"] + "%");
 
   $(".control-panel .swatch.dark").css("background", hslToCSS(darkHsl));
   $(".control-panel .swatch.light").css("background", hslToCSS(lightHsl));
+  $(".control-panel .swatch.lightest").css("background", hslToCSS(lightestHsl));
 }
 
 
