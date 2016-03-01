@@ -1,15 +1,15 @@
 var baseHexes = [
-"#E08071",
-"#F58E5E",
-"#FAAF63",
-"#FFDA70",
-"#A1D085",
-"#6AC4A8",
-"#80BAE5",
-"#5381B9",
-"#5E6BA1",
-"#9B6D96",
-"#F38794"
+"#C33B32",
+"#F26C23",
+"#F89C24",
+"#FFCD02",
+"#7DC14C",
+"#5BC0A4",
+"#00A7E0",
+"#005DA5",
+"#1F366C",
+"#95368C",
+"#E14164"
 ];
 
 var base = "#5180BB";
@@ -28,7 +28,7 @@ var modifier = {
   "darken" : {
     "hue" : 0,
     "saturation" : 0,
-    "lightness" : -15
+    "lightness" : -25
   },
   "lighten" : {
     "hue" : 0,
@@ -38,10 +38,9 @@ var modifier = {
   "lightest" : {
     "hue" : 0,
     "saturation" : 0,
-    "lightness" : 25
+    "lightness" : 40
   }
 }
-
 
 $(document).ready(function(){
   $(".control-panel .swatch.primary").css("background",base);
