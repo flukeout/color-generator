@@ -9,7 +9,8 @@ var baseHexes = [
 "#005DA5",
 "#1F366C",
 "#95368C",
-"#E14164"
+"#E14164",
+"#56565A"
 ];
 
 var base = "#5180BB";
@@ -28,7 +29,7 @@ var modifier = {
   "darken" : {
     "hue" : 0,
     "saturation" : 0,
-    "lightness" : -25
+    "lightness" : -15
   },
   "lighten" : {
     "hue" : 0,
